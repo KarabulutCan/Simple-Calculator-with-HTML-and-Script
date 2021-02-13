@@ -1,0 +1,122 @@
+<div id="hesapMakinesi">
+  <div id="ekran">
+    <input type="text" id="sonuc">
+  </div>
+  <div id="sayilar">
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>+</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>-</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>/</button>
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
+    <button>*</button>
+  </div>
+</div>
+
+<style>
+  #hesapMakinesi {
+    margin: 0 auto;
+    width: 350px;
+    height: auto;
+    background-color: slategray;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  #ekran {
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+  }
+
+  #sonuc {
+    padding: 10px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 50px;
+    word-wrap: break-word;
+  }
+
+  #sayilar {
+    text-align: center;
+  }
+
+  button {
+    width: 70px;
+    height: 50px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+  }
+</style>
+
+
+<script>
+"use strict";
+  var _sayilar = document.getElementsByTagName("button"),
+    _sayiUzunluk = _sayilar.length,
+    i = 0;
+
+  for (i = 0; i < _sayiUzunluk; i++) {
+    _sayilar[i].onclick = hesapla;
+  }
+</script>
+
+<script>
+"use strict";
+  var _sonuc = document.getElementById("sonuc");
+
+  function hesapla() {
+    var _deger = this.innerHTML;
+
+    if (_deger == "=") {
+      try {
+        _sonuc.value = eval(_sonuc.value);
+      } catch (e) {
+        _sonuc.value = "0";
+      }
+      return;
+    }
+
+    _sonuc.value += _deger;
+  }
+</script>
+
+<script>
+"use strict";
+  var _sayilar = document.getElementsByTagName("button"),
+    _sayiUzunluk = _sayilar.length,
+    i = 0,
+    _sonuc = document.getElementById("sonuc");
+
+  for (i = 0; i < _sayiUzunluk; i++) {
+    _sayilar[i].onclick = hesapla;
+  }
+
+  function hesapla() {
+    var _deger = this.innerHTML;
+
+    if (_deger == "=") {
+      try {
+        _sonuc.value = eval(_sonuc.value);
+      } catch (e) {
+        _sonuc.value = "0";
+      }
+      return;
+    }
+
+    _sonuc.value += _deger;
+  }
+</script>
